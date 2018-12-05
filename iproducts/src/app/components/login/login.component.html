@@ -1,3 +1,9 @@
-<p>
-  login works!
-</p>
+<div>
+    
+    <button *ngIf="!authService.isLogged()" (click)="authService.login()">Login</button>
+    <button *ngIf="authService.isLogged()" (click)="authService.logout()">LogOut</button>
+    
+    
+    <input #username>
+    <button (click)="authService.setUsername(username.value)">Login Async</button>
+</div>

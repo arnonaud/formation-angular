@@ -5,4 +5,5 @@ export abstract class GenericProductsService {
     public abstract addProduct(product: Product);
     public abstract goFilter(value: number);
     public abstract add(product: Product);
+    public abstract getProductsByName(name: string): Product[];
 }

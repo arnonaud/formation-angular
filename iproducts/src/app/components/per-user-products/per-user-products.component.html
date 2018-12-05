@@ -1,0 +1,9 @@
+<div>
+    <h4>Users with resolver</h4>
+    <ul>
+        <li *ngFor="let user of usersResolve">
+          <button (click)="showProducts(user)">{{ user.name }}</button>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+</div>

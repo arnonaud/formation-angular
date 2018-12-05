@@ -29,4 +29,21 @@ export class ProductsService implements GenericProductsService{
   public add(product: Product) {
     this.products.push(product);
   }
+
+  public getProductsByName(name: string): Product[] {
+    let products = [];
+    if(name === "Leanne Graham") {
+      products = [
+        new Product('p1', 100, false),
+        new Product('p2', 100, false),
+        new Product('p3', 100, false)
+      ]
+    } else if(name === "Ervin Howell") {
+      products =  [
+        new Product('p4', 100, false),
+        new Product('p5', 100, false)
+      ]
+    }
+    return products;
+  }
 }

@@ -11,11 +11,14 @@ import { GenericProductsService } from './services/generic-products-service';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UsersComponent } from './components/users/users.component';
-import { UserService } from './services/user.service';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RoutingModule } from './routing/routing.module';
+import { PerUserProductsComponent } from './components/per-user-products/per-user-products.component';
+import { AdminModule } from './admin/admin.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,16 +30,18 @@ import { RoutingModule } from './routing/routing.module';
     UsersComponent,
     LandingComponent,
     LoginComponent,
-    ErrorComponent
-    ],
+    ErrorComponent,
+    PerUserProductsComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RoutingModule
+    RoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [
+  providers: [ 
     {
       provide: GenericProductsService,
       useClass: ProductsService

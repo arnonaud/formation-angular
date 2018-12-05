@@ -8,6 +8,6 @@
     <div>
       <label>Date</label><input type="date" formControlName="birthdate" >
     </div>
-    <input [disabled]="userForm.invalid" type="submit"><p *ngIf="birthdateCtrl.dirty && birthdateCtrl.hasError('tooYoung')">You are too young</p>
+    <input [disabled]="userForm.invalid" type="submit"><p *ngIf="userForm.dirty && userForm.hasError('tooYoung')">You are too young</p>
   </form>
 </div>
