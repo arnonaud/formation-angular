@@ -1,0 +1,28 @@
+<input #name />
+<input #price />
+<button (click)="addProduct(name.value, price.value)">add product</button>
+
+<div>
+  <p>Products number: {{ productService.getAllProducts().length }}</p>
+  <p *ngIf="productService.getAllProducts().length > 0">Products list</p>
+  <ul>
+    <li *ngFor="let product of productService.getAllProducts() | filterByPrice:amount" [ngClass]="{'soldOut': product.soldOut }">
+      <input type="checkbox" (click)="product.toggleSoldOut()">
+        {{ product | productPipe }}
+    </li>
+  </ul>
+</div>
+
+<div *ngFor="let product of productService.getAllProducts()">
+  <app-product [product]="product"></app-product>
+</div>
+
+<input type="number" #filterPredicate>
+<button (click)="goFilter(filterPredicate.value)">Filter</button>
+
+<div [ngSwitch]= "productService.getAllProducts().length">
+  <div *ngSwitchCase=0>No products yet</div>
+  <div *ngSwitchCase=1> you have one product</div>
+  <div *ngSwitchDefault> you have many products</div>
+</div>
+

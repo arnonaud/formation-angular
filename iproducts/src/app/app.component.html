@@ -1,0 +1,25 @@
+<div>
+    <h2>Welcome to {{ title }}</h2>
+</div>
+
+<div>
+    <ul>
+        <li>
+            <a href="" routerLink="/home" routerLinkActive="selected-menu">Home</a>
+        </li>
+        <li>
+            <a href="" [routerLink]="['/products']" routerLinkActive="selected-menu">Products</a>
+        </li>
+        <li>
+            <a href="" [routerLink]="['/users']" routerLinkActive="selected-menu">Users</a>
+        </li>
+        <li>
+            <a href="" [routerLink]="['/login']" routerLinkActive="selected-menu">Login</a>
+        </li>
+    </ul>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+

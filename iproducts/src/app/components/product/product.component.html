@@ -1,0 +1,8 @@
+<p [ngClass]="{'soldOut': product.soldOut }">
+    name: {{ product.name }} 
+    price: {{ product.price }}
+    <button (click)="product.toggleSoldOut()">
+        <!-- soldOut: {{ product.soldOut }} -->
+    </button>
+    <button (click)="productSelected()">select</button>
+</p>

@@ -1,0 +1,13 @@
+<div>
+  <h2>Sign up</h2>
+  
+  <form (ngSubmit)="register()" [formGroup]="userForm">
+    <div>
+      <label>Username</label><input formControlName="username">
+    </div>
+    <div>
+      <label>Date</label><input type="date" formControlName="birthdate" >
+    </div>
+    <input [disabled]="userForm.invalid" type="submit"><p *ngIf="birthdateCtrl.dirty && birthdateCtrl.hasError('tooYoung')">You are too young</p>
+  </form>
+</div>

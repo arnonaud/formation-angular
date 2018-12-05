@@ -1,0 +1,16 @@
+<div>
+    <app-product-form (addProduct)="productService.add($event)"></app-product-form>
+</div>
+<div>
+    <app-user-form></app-user-form>
+</div>
+<div>
+    <h2 *ngIf="currentProduct">Current product name : {{ currentProduct.name }} </h2>
+    <app-product (select)="showCurrentProduct($event)" *ngFor="let product of productService.getAllProducts()" [product]="product">
+    </app-product>
+</div>
+<div>
+    <app-users></app-users>
+</div>
+
+

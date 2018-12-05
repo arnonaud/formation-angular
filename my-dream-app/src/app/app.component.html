@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ greeting?.title }}!
+  </h1>
+  <p [textContent]= "message"></p>
+
+  <button (click)="clickHandler()">Click me !</button>
+
+
+  <div>
+    <app-sub2></app-sub2>
+  </div>
+</div>
+
+<div [size]="100" appBig>ma div</div>
+
